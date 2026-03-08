@@ -1,9 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 app.get("/", (req, res) => {
-  res.send("Server is running");
+  res.send("Backend server running");
 });
 
 const PORT = 5000;
